@@ -26,7 +26,7 @@ function App() {
   return (
     <>
     <RecipeContext.Provider value={recipesContext} >
-<List></List>
+{/* <List></List> */}
 
      <Routes>
         <Route path='/' element={<Login setUserData={setUserData} />} />
@@ -58,7 +58,16 @@ function App() {
         />
         <Route path='*' element={<NotFound />} />
 
-        <Route path="/recipe/:idRecipe"></Route>
+    
+                <Route
+            path='/recipe/:idMeal'
+            element={
+              <main>
+                <Header setUserData={setUserData} userData={userData} />
+                <AuthRoute userData={userData} component={<RecipeDetail />} />
+              </main>}
+          />
+
       </Routes>
     
 </RecipeContext.Provider>

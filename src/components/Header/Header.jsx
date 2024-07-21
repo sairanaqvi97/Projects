@@ -19,7 +19,7 @@ function Header({ setUserData, userData }) {
         <header>
         <nav>
             <ul>
-                <li><Link to="/inicio">Menu semanal</Link></li>
+                <li><Link to="/inicio">Inicio</Link></li>
                 <li><Link to="/list">Mis comidas</Link></li>
                 <li><Link to="/form">Nueva comida</Link></li>
 

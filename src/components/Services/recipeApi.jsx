@@ -1,4 +1,8 @@
 export const getDataRecipes = () => {
+
+    const API = 'https://668c1d430b61b8d23b0c7558.mockapi.io/WeeklyMenuApp/Recipe'
+
+
     return fetch('https://668c1d430b61b8d23b0c7558.mockapi.io/WeeklyMenuApp/Recipe', {
         method: "GET",
         headers: {

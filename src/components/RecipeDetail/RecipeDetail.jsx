@@ -1,15 +1,31 @@
-import React from 'react'
+import { useContext } from "react";
+import { RecipeContext } from "../context/RecipeContext";
+import { Link, useParams } from "react-router-dom";
 
 
 function RecipeDetail() {
-  return (
-   <>
-   <div className='container'>
+    const context = useContext(RecipeContext);
 
+    const { idMeal } = useParams();
+    const findMeal = context.recipes.find((recipe) => recipe.id === idMeal);
 
-   </div>
-   </>
-  )
-}
+    return (
+        <>
+            {findMeal ? (
+                <>
+                    <h2>{findMeal.name}</h2>
+                    <img src={findMeal.image} />
+                    <h5>Tipo de comida</h5>
+                    <p className="text-meal">{findMeal.type}</p>
+                    <h5>Descripción</h5>
+                    <p className="text-meal">{findMeal.description}</p>
+                    <h5>Ingredientes</h5>
+                    <p className="text-meal">{findMeal.ingredients}</p>
+                </>
+            ) : null}
+            <Link to={'/list'}>Volver a Menu Semanal</Link>
+        </>
+    )
+};
 
 export default RecipeDetail
