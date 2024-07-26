@@ -9,6 +9,7 @@ import Form from "./Form/Form";
 import List from "./List/List"
 import RecipeDetail from "./RecipeDetail/RecipeDetail"
 import { RecipeContext, useRecipeContext } from "./context/RecipeContext";
+import "../scss/index.css"
 
 
 function App() {
