@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { getDataFromApi } from "../Services/api";
 import { useNavigate } from "react-router-dom";
+import "../Login/Login.css"
 // Se debe importar la función "getDataFromApi" definida en el componente "api.jsx" que ejecuta la petición a la API donde estarán los valores que permitan validad el login.
 // Como hay definidas varias peticiones en el archivo "api.jsx", se debe importar entre llaves
 
@@ -33,20 +34,27 @@ function Login({ setUserData }) {
         });
     }; // Función manejadora del evento onSubmit que ejecuta la petición a la API definida en el componente "api.jsx" (debe importarse). Para ello llama a la función "getDataFromApi" que realiza la petición a la API en dicho componente y le pasa como parámetro la información a enviar aquí (user)
     // Esta información viene de una petición y por lo tanto es una promesa, por lo que se le debe ejecutar el método .then para traducirla (este método .then seria el que iría en la propia función "getDataFromApi" tras traducir la info a .json, pero como en este caso se utiliza en este componente, se aplica aqui) 
-
     return (
-        <div>
-            {/* El formulario pintado para el login debe tener los campos correspondientes a las propiedades de objeto que requiere la petición a la API donde se alojan estos datos, y con ello las propiedades definidas para el objeto de la variable de estado donde se alojará la información introducida por el usuario */}
-            <form action='' onChange={handleInput} onSubmit={handleForm}>
-                <label htmlFor='username'>Nombre de usuario</label>
-                <input type="text" id='username' name='username' />
-                <label htmlFor='password'>Contraseña</label>
-                <input type='password' name='password' id='password' />
-                <button>Login</button>
-
-            </form>
+        <div className="container">
+            <div className="login-box">
+            <h1 className="title">Foodie tracker</h1>
+      <h2 className="description">Inicia sesión </h2>
+                <form className='form' action='' onChange={handleInput} onSubmit={handleForm}>
+                    
+                    <div className="input-field">
+                    <label htmlFor='username'>Nombre de usuario</label>
+                    <input type="text" id='username' name='username' />
+                    </div>
+                    <div className="input-field">
+                    <label htmlFor='password'>Contraseña</label>
+                    <input type='password' name='password' id='password' />
+                    </div>
+                    <button className="submit-button" type='submit'>Login</button>
+                </form>
+            </div>
         </div>
     )
 }
 
 export default Login
+
