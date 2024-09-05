@@ -40,6 +40,12 @@
     margin-bottom: 0px;
 }
 
+.logo {
+    width: 200px;
+    height: 200px;
+    margin: -30px 0px -50px 0px;
+}
+
 .input-field {
 display: flex;
 flex-direction: row;
@@ -65,12 +71,6 @@ margin: 7px 0px 0px 0px;
       margin: 8px 0px 4px 0px;
       border-style: hidden;
   }
-.title {
-color: #F68B32;
-font-size: 50px;
-text-shadow:0 0 3px #264900;
-margin: 30px 0px 10px 0px;
-}
 
 .description {
     font-size: 18px;
@@ -95,3 +95,36 @@ margin: 30px 0px 10px 0px;
     cursor: pointer;
 }
 
+@media (max-width: 600px) {
+    .login-box {
+        width: 75%; /* Make the box take more space on smaller screens */
+        height: auto; /* Allow the height to adjust automatically */
+        padding: 10px 20px; /* Add some padding */
+    }
+
+    .logo {
+        width: 150px; /* Reduce the size of the logo */
+        height: 150px;
+        margin: 0; /* Reset margin to avoid overlap */
+    }
+
+    .description {
+        font-size: 16px; /* Reduce font size of the description */
+    }
+
+    .input-field label {
+        width: 80px; /* Adjust the label width for better fit */
+        font-size: 10px; /* Reduce font size */
+    }
+
+    .input-field input {
+        width: 100%; /* Make the input fields responsive */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .submit-button {
+        width: 100%; /* Ensure the button fits the container */
+        font-size: 18px; /* Adjust button font size */
+        padding: 10px 5px; /* Adjust padding for better touch target size */
+    }
+}

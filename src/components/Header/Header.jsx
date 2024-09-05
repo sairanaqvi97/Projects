@@ -1,6 +1,8 @@
 // COMPONENTE 1. Header para pintar el menú con los enlaces a las páginas de la web. Será común a toda la web por lo que se debe renderizar en todos los componentes
 
 import { Link, useNavigate } from "react-router-dom";
+import "../Header/Header.css"
+import foodieplannerlogo from "../../media/foodieplannerlogo.svg"
 
 function Header({ setUserData, userData }) {
     const navigate = useNavigate(); // Hook propio de React que nos devuelve la función navigate, que nos permite hacer redirecciones programáticas de una URL al resultado de otra ruta. Se crea para redirigir al usuario a la home al realizar el logout de sesión
@@ -16,16 +18,17 @@ function Header({ setUserData, userData }) {
 
 
     return (
-        <header>
+        <header className="header">
+            <div className="logo"><Link className="link" to="/inicio"><img src={foodieplannerlogo} alt="foodie-planner-logo" /></Link></div>
         <nav>
-            <ul>
-                <li><Link to="/inicio">Inicio</Link></li>
-                <li><Link to="/list">Mis comidas</Link></li>
-                <li><Link to="/form">Nueva comida</Link></li>
+            <ul className="menu">
+                <li className="menu-item"><Link className="link" to="/inicio">Inicio</Link></li>
+                <li className="menu-item"><Link className="link" to="/list">Mis comidas</Link></li>
+                <li className="menu-item"><Link className="link" to="/form">Nueva comida</Link></li>
 
                 {userData && (
                     <li>
-                        <button onClick={handleLogout}>Logout</button>
+                        <button className="logout-button" onClick={handleLogout}>Logout</button>
                     </li>
                 )}
 

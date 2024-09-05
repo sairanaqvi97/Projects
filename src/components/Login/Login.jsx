@@ -4,6 +4,9 @@ import { useState } from "react";
 import { getDataFromApi } from "../Services/api";
 import { useNavigate } from "react-router-dom";
 import "../Login/Login.css"
+import foodieplannerlogo from "../../media/foodieplannerlogo.svg"
+
+
 // Se debe importar la función "getDataFromApi" definida en el componente "api.jsx" que ejecuta la petición a la API donde estarán los valores que permitan validad el login.
 // Como hay definidas varias peticiones en el archivo "api.jsx", se debe importar entre llaves
 
@@ -37,7 +40,7 @@ function Login({ setUserData }) {
     return (
         <div className="container">
             <div className="login-box">
-            <h1 className="title">Foodie tracker</h1>
+           <div> <img className= "logo" src={foodieplannerlogo} alt="foodie-planner-logo" /> </div> 
       <h2 className="description">Inicia sesión </h2>
                 <form className='form' action='' onChange={handleInput} onSubmit={handleForm}>
                     
